@@ -1,0 +1,60 @@
+{"allOf": [
+  { "$ref": "person-schema.json" },
+  {
+    "type": "object",
+    "properties": {
+      "portfolio": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "links": {
+              "type": "object",
+              "properties": {
+                "github": {
+                  "type": "string"
+                },
+                "medium": {
+                  "type": "string"
+                },
+                "youtube": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": true
+            },
+            "date": {
+              "type": "string"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "imagePaths": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": ["In-Progress", "Maintaining", "Archived"]
+            }
+          },
+          "required": ["title", "tags", "imagePaths", "description", "status"],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+]
+}
+
