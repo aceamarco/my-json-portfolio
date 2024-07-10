@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Github, Linkedin, Medium } from 'react-bootstrap-icons';
+import { Github, Linkedin, Medium, FileEarmarkArrowDownFill } from 'react-bootstrap-icons';
 
 const palette = {
   background: 'rgba(0, 0, 0, 0.2)', // Background color with 20% opacity
@@ -13,28 +13,31 @@ const palette = {
   }
 };
 
-function CategoryPill({ variant }) {
-  let badgeBg;
-  let badgeText;
-
-  switch (variant) {
-    case 'python':
-      badgeBg = palette.accent.secondary_light; // Example RGBA color with 20% opacity
-      badgeText = 'Python';
-      break;
-    default:
-      badgeBg = palette.accent.secondary; // Use your palette color for default background
-      badgeText = 'Default Text';
-  }
+function CategoryPill({ name }) {
 
   return (
-    <span className='badge rounded-pill' style={{ background: badgeBg }}>
-      {badgeText}
+    <span className='badge rounded-pill category-pill' style={{ background: palette.accent.secondary_light }}>
+      {name}
     </span>
   );
 }
 
-function SocialsButton({ variant }) {
+function CategoryPillContainer ({tags}) {
+  return (
+    <div className="category-pill-container" style={{ marginBottom: '5px' }}>
+      {tags.map((tag, index) => (
+        <CategoryPill key={index} name={tag} />
+      ))}
+    </div>
+  )
+}
+
+const openLinkInNewTab = (url) => {
+  const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+  if (newWindow) newWindow.opener = null;
+};
+
+function SocialsButton({ variant = 'github', link='github.com/aceamarco' }) {
   let icon;
   const size = 20; // Example size, adjust as needed
 
@@ -54,7 +57,7 @@ function SocialsButton({ variant }) {
   }
 
   return (
-    <span className='badge socials-button'>
+    <span onClick={() => openLinkInNewTab(link)} className='badge socials-button' style={{ cursor: 'pointer' }}>
       {icon}
     </span>
   );
@@ -73,7 +76,7 @@ function SidePanelNav({ selected = 'projects' }) {
           <ul>
             {sections.map((section) => (
               <li key={section}>
-                {section === selected ? `- ${section}` : section}
+                {section === selected ? `· ${section}` : section}
               </li>
             ))}
           </ul>
@@ -83,9 +86,41 @@ function SidePanelNav({ selected = 'projects' }) {
   );
 }
 
+
+function ViewOnGHButton({ link = 'https://github.com/aceamarco/resume' }) {
+  const size = 20;
+  return (
+    <Container className="d-inline-flex">
+      <Row className="align-items-center">
+        <Col className="d-flex align-items-center" onClick={() => openLinkInNewTab(link)}>
+          <Github style={{ marginRight: '5px' }} size={size} color={palette.accent.default} />
+          <span style={{ color: palette.text }}>View on Github</span>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+function DownloadBtn () {
+  const size = 20;
+  return (
+    <Container style={{display: 'inline-block'}}>
+      <Row className='justify-content-start flex-wrap'>
+        <Col auto>
+          <FileEarmarkArrowDownFill style={{marginRight: '5px'}} size={size} color={palette.accent.default}></FileEarmarkArrowDownFill>
+          <span style={{color: palette.text}}>Download</span>
+        </Col>
+      </Row>
+    </Container>
+  )
+}
+
 export {
   palette,
   SocialsButton,
   SidePanelNav,
   CategoryPill,
+  CategoryPillContainer,
+  ViewOnGHButton,
+  DownloadBtn
 }

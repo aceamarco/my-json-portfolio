@@ -56,3 +56,23 @@
   padding: 10px;
   border-radius: 10px;
 }
+
+.category-pill-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin-bottom: 5px;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.category-pill-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  margin-right: 5px;
+}

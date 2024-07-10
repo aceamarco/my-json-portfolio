@@ -9,6 +9,9 @@ import ResumeFrame from '@/components/Resume';
 import SocialsFrame from '@/components/Socials';
 import Footer from '@/components/Footer';
 
+import portfolio from '@/portfolio.json'; // Adjust the import path based on your project structure
+
+
 export default function LandingPage() {
   return (
     <>
@@ -17,7 +20,7 @@ export default function LandingPage() {
         <div className='black-overlay'></div>
       </div>
       <LandingFrame/>
-      <ProjectsFrame/>
+      <ProjectsFrame style={{ width: '80%' }} projects={portfolio.portfolio} />
       <ResumeFrame/>
       <SocialsFrame/>
       <Footer/>
