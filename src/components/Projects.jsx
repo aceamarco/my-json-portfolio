@@ -7,6 +7,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { SocialsButton, CategoryPillContainer } from '@/components/Common';
 import tepig_img from '@/assets/images/498.png';
 
+import '@/styles/Projects.css'
+
 
 function ProjectCard({
   image_paths = [tepig_img], // Default image path
@@ -18,13 +20,17 @@ function ProjectCard({
 }) {
   return (
     <Card text='light' style={{ width: '18rem', background: 'rgba(0, 0, 0, 0.12)' }}>
-      <Carousel>
-        {image_paths.map((path, index) => (
-          <Carousel.Item key={index}>
-            <img src={path} className="d-block w-100 project-card-img" alt={`slide-${index}`} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
+      {image_paths.length > 1 ? (
+        <Carousel>
+          {image_paths.map((path, index) => (
+            <Carousel.Item key={index}>
+              <img src={path} className="d-block w-100 project-card-img" alt={`slide-${index}`} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      ) : (
+        <img src={image_paths[0]} className="d-block w-100 project-card-img" alt="single-image" />
+      )}
       <Card.Body>
         <CategoryPillContainer tags={tags} />
         <Card.Title>{name}</Card.Title>
@@ -39,6 +45,7 @@ function ProjectCard({
     </Card>
   );
 }
+
 
 function ProjectsDashboard({portfolio}) {
   return (

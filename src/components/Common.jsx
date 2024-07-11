@@ -3,6 +3,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Github, Linkedin, Medium, FileEarmarkArrowDownFill } from 'react-bootstrap-icons';
 
+import '@/styles/Common.css'
+
 const palette = {
   background: 'rgba(0, 0, 0, 0.2)', // Background color with 20% opacity
   text: 'rgba(255, 255, 255, 1)', // White text with full opacity
@@ -90,30 +92,23 @@ function SidePanelNav({ selected = 'projects' }) {
 function ViewOnGHButton({ link = 'https://github.com/aceamarco/resume' }) {
   const size = 20;
   return (
-    <Container className="d-inline-flex">
-      <Row className="align-items-center">
-        <Col className="d-flex align-items-center" onClick={() => openLinkInNewTab(link)}>
-          <Github style={{ marginRight: '5px' }} size={size} color={palette.accent.default} />
-          <span style={{ color: palette.text }}>View on Github</span>
-        </Col>
-      </Row>
-    </Container>
-  );
+    <div onClick={() => openLinkInNewTab(link)} className='view-on-gh-container'>
+      <Github style={{ marginRight: '5px' }} size={size} color={palette.accent.default} />
+      <span style={{ color: palette.text }}>View on Github</span>
+    </div>
+  )
 }
 
 function DownloadBtn () {
   const size = 20;
   return (
-    <Container style={{display: 'inline-block'}}>
-      <Row className='justify-content-start flex-wrap'>
-        <Col auto>
-          <FileEarmarkArrowDownFill style={{marginRight: '5px'}} size={size} color={palette.accent.default}></FileEarmarkArrowDownFill>
-          <span style={{color: palette.text}}>Download</span>
-        </Col>
-      </Row>
-    </Container>
+    <div onClick={() => openLinkInNewTab(link)} className='view-on-gh-container'>
+      <FileEarmarkArrowDownFill style={{marginRight: '5px'}} size={size} color={palette.accent.default}></FileEarmarkArrowDownFill>
+      <span style={{color: palette.text}}>Download</span>
+    </div>
   )
 }
+
 
 export {
   palette,

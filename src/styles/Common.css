@@ -1,0 +1,11 @@
+.view-on-gh-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

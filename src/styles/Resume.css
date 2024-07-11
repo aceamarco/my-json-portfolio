@@ -1,0 +1,20 @@
+.resumeFrame-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.resumeButtons-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: center;
+  transform: translate(-210px, 40px);
+}
