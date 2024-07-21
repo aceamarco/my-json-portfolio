@@ -24,6 +24,17 @@
   margin-left: 20px;
 }
 
+/* Targeting all direct children of the parent */
+.content > * {
+  margin-top: 20px; /* Set desired top margin */
+  margin-bottom: 20px; /* Set desired bottom margin */
+}
+
+/* Remove top margin for the first child */
+.content > *:first-child {
+  margin-top: 0;
+}
+
 .nav-panel {
   position: sticky;
   top: 0;

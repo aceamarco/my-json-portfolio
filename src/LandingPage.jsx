@@ -14,6 +14,7 @@ import portfolio from "@/portfolio.json"; // Adjust the import path based on you
 
 export default function LandingPage() {
   // Refs for each section
+  const landingRef = React.useRef(null);
   const projectsRef = React.useRef(null);
   const resumeRef = React.useRef(null);
   const socialsRef = React.useRef(null);
@@ -58,7 +59,9 @@ export default function LandingPage() {
         <img className="background-image" src={self_img} alt="Background" />
         <div className="black-overlay"></div>
       </div>
-      <LandingFrame />
+      <div id="Landing" ref={landingRef}>
+        <LandingFrame />
+      </div>
       <div className="view-frame">
         {/* View Frame - this is where the rest of the page comes in */}
         <div className="content">
@@ -76,7 +79,7 @@ export default function LandingPage() {
           <NavPanel data={navData} />
         </div>
       </div>
-      <Footer />
+      <Footer resumeRef={resumeRef} landingPageRef={landingRef} />
     </>
   );
 }
