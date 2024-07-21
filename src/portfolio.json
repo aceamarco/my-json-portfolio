@@ -1,61 +1,86 @@
 {
-  "portfolio": [
-    {
-      "title": "Pokemon Air Force 1's",
-      "status": "In-Progress",
-      "tags": ["Python", "Selenium", "Math"],
-      "imagePaths": [
-        "src/assets/gifs/Tepig_AF1_Demo.gif",
-        "src/assets/images/498.png",
-        "src/assets/images/445.png"
-      ],
-      "description": "Built with Python, uses Selenium to navigate the Nike website and build Air Force One's inspired by the color palette of any pokemon!"
-    },
-    {
-      "title": "My JSON Portfolio v1.0",
-      "status": "Archived",
-      "links": {
-        "github": "https://github.com/aceamarco/mywebsite"
+  "portfolio": {
+    "socials": [
+      {
+        "thumbnail_path": "src/assets/images/github_thumbnail.png",
+        "title": "Github",
+        "subtitle": "Open-source projects",
+        "link": "https://github.com/aceamarco"
       },
-      "tags": ["Python", "Django", "HTML", "CSS", "Javascript"],
-      "imagePaths": ["src/assets/gifs/Website_Walkthrough.gif"],
-      "description": "My personal website! Hosted from PythonAnywhere, uses a Django Backend and the Bootstrap UI."
-    },
-    {
-      "title": "Quantified Self Dashboard",
-      "status": "In-Progress",
-      "tags": ["React", "Javascript", "Statistics"],
-      "imagePaths": ["src/assets/gifs/Quantified_Self_Chart.gif"],
-      "description": "Built with React, this simple dashboard displays useful statistics collected from a smart scale! My goal was to create an interface that can keep users motivated by showing them the \"big picture\" of their day to day health progress!"
-    },
-    {
-      "title": "Minesweeper AI (CS50AI)",
-      "status": "Archived",
-      "tags": ["Python", "Logic", "Pygame"],
-      "imagePaths": ["src/assets/gifs/Minesweeper_AI.gif", "src/assets/images/minesweeper_ai.png"],
-      "description": "A simple Minesweeper AI that uses logical induction to solve a Minesweeper puzzle. This project was completed as a part of Harvard CS50's Introduction to Artificial Intelligence with Python."
-    },
-    {
-      "title": "My Git-JSON Resume",
-      "status": "Maintaining",
-      "links": {
-        "github": "https://github.com/aceamarco/resume",
-        "medium": "https://medium.com/@aceamarco/resumes-a-programmers-perspective-automating-resume-making-with-github-actions-ef484e3a6b07"
+      {
+        "thumbnail_path": "src/assets/images/linkedin_thumbnail.png",
+        "title": "LinkedIn",
+        "subtitle": "Connect with me!",
+        "link": "https://www.linkedin.com/in/marco-acea/"
       },
-      "tags": ["Git", "DevOps"],
-      "imagePaths": ["src/assets/gifs/My_Git_JSON_Resume.gif"],
-      "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"
-    },
-    {
-      "title": "ArgoCD AppSource Controller",
-      "status": "Archived",
-      "links": {
-        "github": "https://github.com/argoproj-labs/appsource",
-        "medium": "https://medium.com/argo-project/introducing-the-appsource-controller-for-argocd-52f21d28d643"
+      {
+        "thumbnail_path": "src/assets/images/medium_thumbnail.png",
+        "title": "Medium",
+        "subtitle": "Technical Articles",
+        "link": "https://aceamarco.medium.com/"
+      }
+    ],
+    "projects": [
+      {
+        "title": "Pokemon Air Force 1's",
+        "status": "In-Progress",
+        "tags": ["Python", "Selenium", "Math"],
+        "imagePaths": [
+          "src/assets/gifs/Tepig_AF1_Demo.gif",
+          "src/assets/images/498.png",
+          "src/assets/images/445.png"
+        ],
+        "description": "Built with Python, uses Selenium to navigate the Nike website and build Air Force One's inspired by the color palette of any pokemon!"
       },
-      "tags": ["DevOps", "Golang", "Kubernetes"],
-      "imagePaths": ["src/assets/images/argocd.webp"],
-      "description": "A decentralized manager for ArgoCD Applications hosted on a kubernetes cluster — allows sub-admins to create and manage their own applications on the ArgoCD platform."
-    }
-  ]
+      {
+        "title": "My JSON Portfolio v1.0",
+        "status": "Archived",
+        "links": {
+          "github": "https://github.com/aceamarco/mywebsite"
+        },
+        "tags": ["Python", "Django", "HTML", "CSS", "Javascript"],
+        "imagePaths": ["src/assets/gifs/Website_Walkthrough.gif"],
+        "description": "My personal website! Hosted from PythonAnywhere, uses a Django Backend and the Bootstrap UI."
+      },
+      {
+        "title": "Quantified Self Dashboard",
+        "status": "In-Progress",
+        "tags": ["React", "Javascript", "Statistics"],
+        "imagePaths": ["src/assets/gifs/Quantified_Self_Chart.gif"],
+        "description": "Built with React, this simple dashboard displays useful statistics collected from a smart scale! My goal was to create an interface that can keep users motivated by showing them the \"big picture\" of their day to day health progress!"
+      },
+      {
+        "title": "Minesweeper AI (CS50AI)",
+        "status": "Archived",
+        "tags": ["Python", "Logic", "Pygame"],
+        "imagePaths": [
+          "src/assets/gifs/Minesweeper_AI.gif",
+          "src/assets/images/minesweeper_ai.png"
+        ],
+        "description": "A simple Minesweeper AI that uses logical induction to solve a Minesweeper puzzle. This project was completed as a part of Harvard CS50's Introduction to Artificial Intelligence with Python."
+      },
+      {
+        "title": "My Git-JSON Resume",
+        "status": "Maintaining",
+        "links": {
+          "github": "https://github.com/aceamarco/resume",
+          "medium": "https://medium.com/@aceamarco/resumes-a-programmers-perspective-automating-resume-making-with-github-actions-ef484e3a6b07"
+        },
+        "tags": ["Git", "DevOps"],
+        "imagePaths": ["src/assets/gifs/My_Git_JSON_Resume.gif"],
+        "description": "Using the open source project, JSON Resume, I created a Github Repository with Github Actions that let's you version control the information on your resume. The project generates pdfs and html files in over 250+ themes, which can be posted online using Github Pages!"
+      },
+      {
+        "title": "ArgoCD AppSource Controller",
+        "status": "Archived",
+        "links": {
+          "github": "https://github.com/argoproj-labs/appsource",
+          "medium": "https://medium.com/argo-project/introducing-the-appsource-controller-for-argocd-52f21d28d643"
+        },
+        "tags": ["DevOps", "Golang", "Kubernetes"],
+        "imagePaths": ["src/assets/images/argocd.webp"],
+        "description": "A decentralized manager for ArgoCD Applications hosted on a kubernetes cluster — allows sub-admins to create and manage their own applications on the ArgoCD platform."
+      }
+    ]
+  }
 }

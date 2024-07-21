@@ -1,11 +1,35 @@
 .view-on-gh-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .download-btn-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.frame {
+  margin-bottom: 10%;
+}
+
+.view-frame {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.content {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.nav-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Ensure it spans the full height of the viewport */
+  width: 200px; /* Adjust width as needed */
+  background-color: white; /* Adjust background color as needed */
+  padding: 10px; /* Adjust padding as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
 }

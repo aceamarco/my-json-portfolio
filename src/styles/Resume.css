@@ -7,14 +7,14 @@
 .resume-container {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .resumeButtons-container {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
-  align-self: center;
-  transform: translate(-210px, 40px);
+  margin-left: 20%
 }
