@@ -1,6 +1,6 @@
 import { ChevronCompactDown } from "react-bootstrap-icons";
 import { TypeAnimation } from "react-type-animation";
-import { palette } from "@/components/common";
+import { palette } from "@/components/Common";
 
 /**
  * Hero component displays a name and an animated sequence of descriptors.
