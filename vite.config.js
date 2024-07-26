@@ -6,6 +6,8 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
 
+  base: "/my-json-portfolio",
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
