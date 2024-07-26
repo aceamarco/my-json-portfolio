@@ -5,3 +5,7 @@
   height: 200px; /* Set the height you prefer */
   object-fit: contain; /* Ensures the image covers the area without stretching */
 }
+
+.projects-container > * {
+  gap: 2%;
+}

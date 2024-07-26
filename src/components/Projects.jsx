@@ -61,7 +61,7 @@ function ProjectCard({
 function ProjectsDashboard({ portfolio }) {
   return (
     <Container
-      className="frame"
+      className="projects-container"
       fluid
       style={{
         width: "80%",

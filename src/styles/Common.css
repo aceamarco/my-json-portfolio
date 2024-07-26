@@ -9,38 +9,3 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
-
-.frame {
-  margin-bottom: 10%;
-}
-
-.view-frame {
-  display: flex;
-  align-items: flex-start; /* Align items to the top */
-}
-
-.content {
-  flex: 1;
-  margin-left: 20px;
-}
-
-/* Targeting all direct children of the parent */
-.content > * {
-  margin-top: 20px; /* Set desired top margin */
-  margin-bottom: 20px; /* Set desired bottom margin */
-}
-
-/* Remove top margin for the first child */
-.content > *:first-child {
-  margin-top: 0;
-}
-
-.nav-panel {
-  position: sticky;
-  top: 0;
-  height: 100vh; /* Ensure it spans the full height of the viewport */
-  width: 200px; /* Adjust width as needed */
-  background-color: white; /* Adjust background color as needed */
-  padding: 10px; /* Adjust padding as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
-}

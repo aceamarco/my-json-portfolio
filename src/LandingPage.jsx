@@ -3,7 +3,8 @@ import * as React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import self_img from "@/assets/images/self_lg.jpg";
-import LandingFrame from "@/components/Landing";
+import self_img_sm from "@/assets/images/self_sm.jpg";
+import LandingFrame from "@/components/Landing/Landing";
 import ProjectsFrame from "@/components/Projects";
 import ResumeFrame from "@/components/Resume";
 import SocialsFrame from "@/components/Socials";
@@ -13,6 +14,7 @@ import NavPanel from "@/components/NavPanel";
 import portfolio from "@/portfolio.json"; // Adjust the import path based on your project structure
 
 export default function LandingPage() {
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 768);
   // Refs for each section
   const landingRef = React.useRef(null);
   const projectsRef = React.useRef(null);
@@ -53,17 +55,33 @@ export default function LandingPage() {
     },
   ];
 
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <div className="background-container">
-        <img className="background-image" src={self_img} alt="Background" />
+        <img
+          className="background-image"
+          src={isMobile ? self_img_sm : self_img}
+          alt="Background"
+        />
         <div className="black-overlay"></div>
       </div>
       <div id="Landing" ref={landingRef}>
         <LandingFrame />
       </div>
-      <div className="view-frame">
-        {/* View Frame - this is where the rest of the page comes in */}
+      <div className="viewFrame">
         <div className="content">
           <div id="Projects" ref={projectsRef}>
             {projectsFrame}
@@ -75,10 +93,13 @@ export default function LandingPage() {
             {socialsFrame}
           </div>
         </div>
-        <div className="nav-panel">
-          <NavPanel data={navData} />
-        </div>
+        {!isMobile && (
+          <div className="navPanel">
+            <NavPanel data={navData} />
+          </div>
+        )}
       </div>
+
       <Footer resumeRef={resumeRef} landingPageRef={landingRef} />
     </>
   );

@@ -1,4 +1,5 @@
 /* LandingPage.css */
+
 .background-container {
   position: fixed;
   top: 0;
@@ -49,7 +50,7 @@
 }
 
 .badge.socials-button {
-  background-color:rgba(0, 0, 0, 0.2)
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .project-card-img {
@@ -75,4 +76,31 @@
 
 .category-pill {
   margin-right: 5px;
+}
+
+.viewFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  padding-left: 5%;
+}
+
+.navPanel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: min(20%, 150px);
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Update this line if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
