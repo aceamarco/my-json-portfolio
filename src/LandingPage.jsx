@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import self_img from "@/assets/images/self_lg.jpg";
 import self_img_sm from "@/assets/images/self_sm.jpg";
-import LandingFrame from "@/components/Landing/Landing";
+import LandingFrame from "@/components/Landing";
 import ProjectsFrame from "@/components/Projects";
 import ResumeFrame from "@/components/Resume";
 import SocialsFrame from "@/components/Socials";
