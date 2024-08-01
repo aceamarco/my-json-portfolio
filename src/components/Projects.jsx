@@ -51,7 +51,7 @@ function ProjectCard({
           {image_paths.map((path, index) => (
             <Carousel.Item key={index}>
               <img
-                src={path}
+                src={`./${path}`}
                 className="d-block w-100 project-card-img"
                 alt={`slide-${index}`}
               />

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
 
   base: "/my-json-portfolio",
-  publicDir: "/src/assets",
+  root: "./",
   build: {
     outDir: "dist",
   },
