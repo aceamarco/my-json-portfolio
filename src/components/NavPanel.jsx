@@ -58,7 +58,7 @@ export default function NavPanel({ data }) {
             margin: "10%",
           }}
         >
-          {inView === item.name ? `· ${item.name}` : item.name}
+          {item.name}
         </div>
       ))}
     </div>
