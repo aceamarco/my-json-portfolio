@@ -60,7 +60,7 @@ function ProjectCard({
         </Carousel>
       ) : (
         <img
-          src={image_paths[0]}
+          src={`./${image_paths[0]}`}
           className="d-block w-100 project-card-img"
           alt="single-image"
         />
