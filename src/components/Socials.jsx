@@ -20,7 +20,7 @@ function SocialsCard({ thumbnail_path, title, subtitle, socials_button }) {
       style={{ width: "18rem", background: "rgba(0, 0, 0, 0.12)" }}
     >
       <img
-        src={thumbnail_path}
+        src={`./${thumbnail_path}`}
         className="d-block w-100 project-card-img"
         alt={title}
       />
