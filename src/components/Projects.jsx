@@ -3,20 +3,24 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-bootstrap/Carousel";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 import { SocialsButton, CategoryPillContainer } from "@/components/Common";
 import tepig_img from "@/assets/images/498.png";
 
 import "@/styles/Projects.css";
 
-const importImages = async (paths) => {
-  await Promise.all(
-    paths.map(async (path) => {
-      await import(`../../${path}`);
-    })
-  );
-};
+// const importImages = async (paths) => {
+//   await Promise.all(
+//     paths.map(async (path) => {
+//       try {
+//         await import(`${path}`);
+//       } catch (error) {
+//         console.error(`Error importing ${path}:`, error);
+//       }
+//     })
+//   );
+// };
 
 function ProjectCard({
   image_paths = [tepig_img], // Default image path
@@ -28,14 +32,14 @@ function ProjectCard({
     { type: "github", url: "https://github.com/aceamarco" },
   ], // Default social media link
 }) {
-  useEffect(() => {
-    // Dynamically import images on component mount
-    const loadImages = async () => {
-      await importImages(image_paths);
-    };
+  // useEffect(() => {
+  //   // Dynamically import images on component mount
+  //   const loadImages = async () => {
+  //     // await importImages(image_paths);
+  //   };
 
-    loadImages();
-  }, [image_paths]);
+  //   loadImages();
+  // }, [image_paths]);
 
   return (
     <Card
