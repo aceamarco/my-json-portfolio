@@ -13,7 +13,7 @@ import "@/styles/Projects.css";
 const importImages = async (paths) => {
   await Promise.all(
     paths.map(async (path) => {
-      await import(`./${path}`);
+      await import(`../../${path}`);
     })
   );
 };
