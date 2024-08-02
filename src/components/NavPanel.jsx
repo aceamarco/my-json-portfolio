@@ -9,6 +9,8 @@ export default function NavPanel({ data }) {
   const [inView, setInView] = useState(data[0].name);
 
   useEffect(() => {
+    // Reset scroll position to the top of the page on component mount
+    window.scrollTo(0, 0);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,6 +40,7 @@ export default function NavPanel({ data }) {
 
   // Function to scroll to the component at the given index
   const scrollToOnClick = (index) => {
+    console.log("scroll!");
     if (data[index].ref.current) {
       data[index].ref.current.scrollIntoView({ behavior: "smooth" });
     }
