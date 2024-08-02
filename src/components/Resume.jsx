@@ -5,6 +5,22 @@ import { ViewOnGHButton, DownloadBtn } from "@/components/Common";
 import "@/styles/Resume.css";
 
 function ResumeIFrame() {
+  function onLoadFrame() {
+    // Function to reset scroll position to the top of the page on component mount
+    function noscroll() {
+      console.log("disabling scroll for 1 second.");
+      window.scrollTo(0, 0);
+    }
+
+    // Add listener to disable scroll
+    window.addEventListener("scroll", noscroll);
+
+    // Remove the scroll disabling listener after a delay
+    const timeoutId = setTimeout(() => {
+      window.removeEventListener("scroll", noscroll);
+    }, 1000);
+  }
+
   return (
     <iframe
       style={{ objectFit: "contain" }}
@@ -14,6 +30,7 @@ function ResumeIFrame() {
       width="100%"
       height="100%"
       allowtransparency="true"
+      onLoad={onLoadFrame()}
     ></iframe>
   );
 }
