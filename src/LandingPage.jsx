@@ -81,26 +81,27 @@ export default function LandingPage() {
       <div id="Landing" ref={landingRef}>
         <LandingFrame />
       </div>
-      <div className="viewFrame">
-        <div className="content">
-          <div id="Projects" ref={projectsRef}>
-            {projectsFrame}
+      <div className="main-container">
+        <div className="viewFrame">
+          <div className="content">
+            <div id="Projects" ref={projectsRef}>
+              {projectsFrame}
+            </div>
+            <div id="Resume" ref={resumeRef}>
+              {resumeFrame}
+            </div>
+            <div id="Socials" ref={socialsRef}>
+              {socialsFrame}
+            </div>
           </div>
-          <div id="Resume" ref={resumeRef}>
-            {resumeFrame}
-          </div>
-          <div id="Socials" ref={socialsRef}>
-            {socialsFrame}
-          </div>
+          {!isMobile && (
+            <div className="navPanel">
+              <NavPanel data={navData} />
+            </div>
+          )}
         </div>
-        {!isMobile && (
-          <div className="navPanel">
-            <NavPanel data={navData} />
-          </div>
-        )}
+        <Footer resumeRef={resumeRef} landingPageRef={landingRef} />
       </div>
-
-      <Footer resumeRef={resumeRef} landingPageRef={landingRef} />
     </>
   );
 }
