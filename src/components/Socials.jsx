@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import { SocialsButton } from "@/components/Common";
+import GoogleCalendarButton from "@/components/GoogleCalendarButton";
 
 import "@/styles/Socials.css";
 
@@ -45,20 +46,25 @@ function SocialsCard({ thumbnail_path, title, subtitle, socials_button }) {
 export default function SocialsFrame({ socials }) {
   return (
     <div className="socials-frame-container">
-      {socials.map((social, index) => {
-        const social_button = (
-          <SocialsButton variant={social.type} link={social.link} />
-        );
-        return (
-          <SocialsCard
-            key={index}
-            thumbnail_path={social.thumbnail_path}
-            title={social.title}
-            subtitle={social.subtitle}
-            socials_button={social_button}
-          />
-        );
-      })}
+      <div className="socials-cards-frame-container">
+        {socials.map((social, index) => {
+          const social_button = (
+            <SocialsButton variant={social.type} link={social.link} />
+          );
+          return (
+            <SocialsCard
+              key={index}
+              thumbnail_path={social.thumbnail_path}
+              title={social.title}
+              subtitle={social.subtitle}
+              socials_button={social_button}
+            />
+          );
+        })}
+      </div>
+      <div className="socials-google-calendar-button">
+        <GoogleCalendarButton />
+      </div>
     </div>
   );
 }
