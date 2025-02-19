@@ -17,7 +17,7 @@ import { palette } from "@/components/Common";
 export function Hero({
   name = "Marco Acea",
   color = palette.text,
-  descriptors = ["Developer", "Designer", "Maker"],
+  descriptors = ["Developer", "Designer", "Videographer", "Maker"],
   delay = 1500,
   descriptorColor = palette.accent.default,
   animationStyles = null,
