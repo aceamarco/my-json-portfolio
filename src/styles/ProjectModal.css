@@ -12,6 +12,7 @@
   z-index: 1000;
   animation: fadeIn 0.3s ease-out;
   backdrop-filter: blur(5px);
+  padding: 10px;
 }
 
 /* Modal Content */
@@ -27,6 +28,8 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Close Button */
@@ -94,6 +97,8 @@
   gap: 25px;
   max-height: calc(90vh - 120px);
   overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }
 
 /* Modal Images */
@@ -102,15 +107,20 @@
   justify-content: center;
   align-items: center;
   min-height: 200px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .image-carousel {
   display: flex;
   gap: 15px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 10px 0;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .image-carousel::-webkit-scrollbar {
@@ -126,13 +136,21 @@
   border-radius: 3px;
 }
 
+.image-carousel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .modal-image {
   max-width: 100%;
   max-height: 400px;
+  min-width: 280px;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .modal-image:hover {
@@ -196,8 +214,9 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .modal-content {
-    width: 95vw;
-    max-height: 95vh;
+    width: 90vw;
+    max-height: 85vh;
+    margin: 0;
   }
 
   .modal-header {
@@ -225,20 +244,27 @@
 
   .modal-image {
     max-height: 250px;
+    min-width: 200px;
   }
 
   .image-carousel {
-    flex-direction: column;
-    align-items: center;
+    gap: 10px;
+    padding: 10px 5px;
+    margin: 0 -5px;
+  }
+
+  .modal-image {
+    min-width: 250px;
+    max-height: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .modal-content {
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-    border-radius: 0;
+    width: 95vw;
+    max-height: 90vh;
+    border-radius: 10px;
+    margin: 10px;
   }
 
   .modal-header {
@@ -255,5 +281,33 @@
 
   .modal-description {
     font-size: 1rem;
+  }
+
+  .modal-image {
+    min-width: 180px;
+    max-height: 200px;
+  }
+
+  .image-carousel {
+    gap: 8px;
+    padding: 8px 3px;
+    margin: 0 -3px;
+  }
+}
+
+/* Extra small screens - prevent full screen */
+@media (max-width: 360px) {
+  .modal-content {
+    width: 92vw;
+    max-height: 88vh;
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    padding: 12px;
+  }
+  
+  .modal-body {
+    padding: 12px;
   }
 }
