@@ -32,8 +32,8 @@ const GoogleCalendarButton = () => {
           buttonRef.current.innerHTML = "";
 
           window.calendar.schedulingButton.load({
-            url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ12_aa6d6rubckWLP-7OYsixDbEs_5V1-7T0HmKBK5LniRQpUtW5Hb5Ch4ix46M4rdcl-0xMUJE?gv=true",
-            color: "#EF6C00",
+            url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1iwmz8PHbNmaGizpS36IZ6trcrswhnpqT49wkuBdbcx5kxxvY3wgbNTdOTE2rM4AGdRD1oo9nB?gv=true",
+            color: "#F4511E",
             label: "Book an appointment",
             target: buttonRef.current,
           });
@@ -44,8 +44,8 @@ const GoogleCalendarButton = () => {
       // Script is already loaded, just ensure the button doesn't duplicate
       buttonRef.current.innerHTML = "";
       window.calendar.schedulingButton.load({
-        url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ12_aa6d6rubckWLP-7OYsixDbEs_5V1-7T0HmKBK5LniRQpUtW5Hb5Ch4ix46M4rdcl-0xMUJE?gv=true",
-        color: "#EF6C00",
+        url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1iwmz8PHbNmaGizpS36IZ6trcrswhnpqT49wkuBdbcx5kxxvY3wgbNTdOTE2rM4AGdRD1oo9nB?gv=true",
+        color: "#F4511E",
         label: "Book an appointment",
         target: buttonRef.current,
       });
