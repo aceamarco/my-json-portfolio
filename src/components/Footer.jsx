@@ -12,7 +12,7 @@ export default function Footer({ resumeRef, landingPageRef }) {
       className="footer-container"
       style={{ background: palette.background, color: palette.text }}
     >
-      <div className="footer-item">© 2024 Marco Acea</div>
+      <div className="footer-item">© 2025 Marco Acea</div>
       <div className="footer-item">
         <a href="mailto:aceamarco@gmail.com" style={{ color: palette.text }}>
           Contact
