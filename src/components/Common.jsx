@@ -46,6 +46,25 @@ const openLinkInNewTab = (url) => {
   if (newWindow) newWindow.opener = null;
 };
 
+const downloadFile = async (url, filename) => {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const downloadUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = downloadUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(downloadUrl);
+  } catch (error) {
+    console.error("Download failed:", error);
+    // Fallback to opening in new tab
+    openLinkInNewTab(url);
+  }
+};
+
 function SocialsButton({ variant = "github", link = "github.com/aceamarco" }) {
   let icon;
   const size = 20; // Example size, adjust as needed
@@ -118,11 +137,14 @@ function ViewOnGHButton({ link = "https://github.com/aceamarco/resume" }) {
   );
 }
 
-function DownloadBtn() {
+function DownloadBtn({
+  link = "https://github.com/aceamarco/resume/raw/master/resume.pdf",
+  filename = "Marco_Acea_Resume.pdf",
+}) {
   const size = 20;
   return (
     <div
-      onClick={() => openLinkInNewTab(link)}
+      onClick={() => downloadFile(link, filename)}
       className="download-btn-container"
     >
       <FileEarmarkArrowDownFill
