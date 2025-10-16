@@ -9,3 +9,21 @@
 .projects-container > * {
   gap: 2%;
 }
+
+/* Project card hover effects */
+.projects-container .card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projects-container .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+.projects-container .card:hover .project-card-img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

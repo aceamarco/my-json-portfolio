@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,6 +7,7 @@ import Carousel from "react-bootstrap/Carousel";
 // import { useEffect } from "react";
 
 import { SocialsButton, CategoryPillContainer } from "@/components/Common";
+import ProjectModal from "@/components/ProjectModal";
 import tepig_img from "@/assets/images/498.png";
 
 import "@/styles/Projects.css";
@@ -25,12 +27,13 @@ import "@/styles/Projects.css";
 function ProjectCard({
   image_paths = [tepig_img], // Default image path
   tags = ["python"], // Default tag
-  name = "Pokemon Air Force 1’s", // Default project name
+  name = "Pokemon Air Force 1's", // Default project name
   date_range = "April 2024 - Present", // Default date range
   description = "Built with Python, uses Selenium to navigate the Nike website and build Air Force One's inspired by the color palette of any pokemon!", // Default description
   social_media_links = [
     { type: "github", url: "https://github.com/aceamarco" },
   ], // Default social media link
+  onClick, // Click handler for opening modal
 }) {
   // useEffect(() => {
   //   // Dynamically import images on component mount
@@ -44,7 +47,12 @@ function ProjectCard({
   return (
     <Card
       text="light"
-      style={{ width: "18rem", background: "rgba(0, 0, 0, 0.12)" }}
+      style={{
+        width: "18rem",
+        background: "rgba(0, 0, 0, 0.12)",
+        cursor: "pointer",
+      }}
+      onClick={onClick}
     >
       {image_paths.length > 1 ? (
         <Carousel>
@@ -81,39 +89,61 @@ function ProjectCard({
 }
 
 function ProjectsDashboard({ portfolio }) {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+  };
+
   return (
-    <Container
-      className="projects-container"
-      fluid
-      style={{
-        width: "80%",
-        height: "100vh",
-        overflowY: "scroll",
-        scrollbarWidth: "none",
-      }}
-    >
-      <Row className="align-items-center h-100">
-        {portfolio.map((project, index) => (
-          <Col key={index}>
-            <ProjectCard
-              image_paths={project.imagePaths}
-              tags={project.tags}
-              name={project.title}
-              date_range={project.status}
-              description={project.description}
-              social_media_links={
-                project.links
-                  ? Object.entries(project.links).map(([type, url]) => ({
-                      type,
-                      url,
-                    }))
-                  : []
-              }
-            />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <>
+      <Container
+        className="projects-container"
+        fluid
+        style={{
+          width: "80%",
+          height: "100vh",
+          overflowY: "scroll",
+          scrollbarWidth: "none",
+        }}
+      >
+        <Row className="align-items-center h-100">
+          {portfolio.map((project, index) => (
+            <Col key={index}>
+              <ProjectCard
+                image_paths={project.imagePaths}
+                tags={project.tags}
+                name={project.title}
+                date_range={project.status}
+                description={project.description}
+                social_media_links={
+                  project.links
+                    ? Object.entries(project.links).map(([type, url]) => ({
+                        type,
+                        url,
+                      }))
+                    : []
+                }
+                onClick={() => handleProjectClick(project)}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      <ProjectModal
+        project={selectedProject}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
+    </>
   );
 }
 
