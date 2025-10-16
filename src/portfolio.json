@@ -80,6 +80,17 @@
         "tags": ["DevOps", "Golang", "Kubernetes"],
         "imagePaths": ["/assets/images/argocd.webp"],
         "description": "A decentralized manager for ArgoCD Applications hosted on a kubernetes cluster — allows sub-admins to create and manage their own applications on the ArgoCD platform."
+      },
+      {
+        "title": "WhatTimeISSIt",
+        "status": "In-Progress",
+        "links": {},
+        "tags": ["SwiftUI", "Apple Watch", "3D Graphics"],
+        "imagePaths": [
+          "/assets/images/whattimeissit_main.png",
+          "/assets/images/whattimeissit_ultra2.png"
+        ],
+        "description": "ISS Tracker for Apple Watch - A sophisticated app that displays the real-time location of the International Space Station using a custom 3D wireframe globe visualization. Features adaptive UI for different watch sizes, comprehensive widget support, and real-time API integration with oscilloscope-style aesthetics."
       }
     ]
   }
