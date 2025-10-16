@@ -83,14 +83,28 @@
       },
       {
         "title": "WhatTimeISSIt",
-        "status": "In-Progress",
+        "status": "Archived",
         "links": {},
         "tags": ["SwiftUI", "Apple Watch", "3D Graphics"],
         "imagePaths": [
           "/assets/images/whattimeissit_main.png",
           "/assets/images/whattimeissit_ultra2.png"
         ],
-        "description": "ISS Tracker for Apple Watch - A sophisticated app that displays the real-time location of the International Space Station using a custom 3D wireframe globe visualization. Features adaptive UI for different watch sizes, comprehensive widget support, and real-time API integration with oscilloscope-style aesthetics."
+        "description": "ISS Tracker for Apple Watch - A simple app that displays the real-time location of the International Space Station using a custom 3D wireframe globe visualization. Features real-time API integration with oscilloscope-style aesthetics."
+      },
+      {
+        "title": "Dynatab75x Controller",
+        "status": "Archived",
+        "links": {
+          "github": "https://github.com/aceamarco/dynatab75x-controller"
+        },
+        "tags": ["Python", "CLI", "Hardware", "USB"],
+        "imagePaths": [
+          "/assets/images/dynatab_pandas.jpeg",
+          "/assets/images/dynatab_hello_world.jpeg",
+          "/assets/gifs/dynatab_stocks.gif"
+        ],
+        "description": "A CLI tool to interact with an Epomaker Dynatab75x keyboard that comes with a small 60x9 pixel screen. Features include uploading images to the screen, sending custom text, and controlling backlight settings. Built with Python and supports USB connections."
       }
     ]
   }
