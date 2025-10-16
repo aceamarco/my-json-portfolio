@@ -55,6 +55,16 @@ export default function LandingPage() {
     },
   ];
 
+  // Function to scroll to the next section (Projects)
+  const scrollToNext = () => {
+    if (projectsRef.current) {
+      projectsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   React.useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -79,7 +89,7 @@ export default function LandingPage() {
         <div className="black-overlay"></div>
       </div>
       <div id="Landing" ref={landingRef}>
-        <LandingFrame />
+        <LandingFrame onScrollToNext={scrollToNext} />
       </div>
       <div className="main-container">
         <div className="viewFrame">
