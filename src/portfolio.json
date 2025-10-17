@@ -22,6 +22,19 @@
     ],
     "projects": [
       {
+        "title": "Transaction Categorizer",
+        "status": "Archived",
+         "tags": ["🤗 HuggingFace", "Scikit-learn", "Machine Learning"],
+        "imagePaths": [
+          "/assets/gifs/concept_banking_categorizer_demo.gif",
+          "/assets/images/concept_banking_categorizer.png"
+        ],
+        "description": "ML pipeline for intelligent bank transaction categorization using HuggingFace sentence transformers and KNN classification. Dynamically adapts and learns from new transaction patterns to achieve prediction accuracy across diverse financial categories.",
+        "links": {
+          "github": "https://github.com/aceamarco/transaction-categorizer-concept"
+        }
+      },
+      {
         "title": "Pokemon Air Force 1's",
         "status": "In-Progress",
         "tags": ["Python", "Selenium", "Math"],
