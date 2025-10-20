@@ -118,6 +118,18 @@
           "/assets/gifs/dynatab_stocks.gif"
         ],
         "description": "A CLI tool to interact with an Epomaker Dynatab75x keyboard that comes with a small 60x9 pixel screen. Features include uploading images to the screen, sending custom text, and controlling backlight settings. Built with Python and supports USB connections."
+      },
+      {
+        "title": "Parthean Notifications Slackbot",
+        "status": "Archived",
+        "links": {
+          "github": "https://github.com/aceamarco/Parthean-Notifications-Slackbot-Public"
+        },
+        "tags": ["Python", "Slack API", "Web Scraping", "Automation"],
+        "imagePaths": [
+          "/assets/images/Answered-demo.png"
+        ],
+        "description": "A Slack workspace app for Carnegie Mellon University's 15-112 Fundamentals of Programming course. Monitors Parthean forum for new posts and replies, automatically notifying a dedicated Slack channel. Features thread resolution detection, upvote tracking, and intelligent notification management with emoji reactions."
       }
     ]
   }
