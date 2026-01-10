@@ -39,14 +39,14 @@ export default function LandingPage() {
   // Data for NavPanel
   const navData = [
     {
-      name: "Projects",
-      component: projectsFrame,
-      ref: projectsRef,
-    },
-    {
       name: "Resume",
       component: resumeFrame,
       ref: resumeRef,
+    },
+    {
+      name: "Projects",
+      component: projectsFrame,
+      ref: projectsRef,
     },
     {
       name: "Socials",
@@ -55,10 +55,10 @@ export default function LandingPage() {
     },
   ];
 
-  // Function to scroll to the next section (Projects)
+  // Function to scroll to the next section (Resume)
   const scrollToNext = () => {
-    if (projectsRef.current) {
-      projectsRef.current.scrollIntoView({
+    if (resumeRef.current) {
+      resumeRef.current.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
@@ -94,11 +94,11 @@ export default function LandingPage() {
       <div className="main-container">
         <div className="viewFrame">
           <div className="content">
-            <div id="Projects" ref={projectsRef}>
-              {projectsFrame}
-            </div>
             <div id="Resume" ref={resumeRef}>
               {resumeFrame}
+            </div>
+            <div id="Projects" ref={projectsRef}>
+              {projectsFrame}
             </div>
             <div id="Socials" ref={socialsRef}>
               {socialsFrame}
